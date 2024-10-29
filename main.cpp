@@ -2,6 +2,7 @@
 #include <ctime>
 #include <cstdlib>
 #include <windows.h>
+#include <unistd.h>
 
 using namespace std;
 void randomchess(int hang,int lie,bool chess[26][100])
@@ -51,6 +52,14 @@ void showchess(int hang,int lie,bool chess[26][100])
 }
 int main()
 {
+    cout<<endl<<endl<<endl;
+    cout<<"            Chessgame Simulation"<<endl;
+    cout<<"--an auxiliary tool for <Linear Algebra (Honor)>"<<endl;
+    cout<<"           Programed by kentliukx"<<endl;
+    cout<<endl<<endl<<endl;
+    sleep(3);
+    system("cls");
+
     int hang,lie,temp,tgt_lie;
     char tgt_hang;
     bool chess[26][100]={0};
