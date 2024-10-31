@@ -5,7 +5,7 @@
 #include <unistd.h>
 
 using namespace std;
-void randomchess(int hang,int lie,bool chess[26][100])
+void randomchess(int hang,int lie,bool chess[26][100])//随机生成棋盘
 {
     srand(time(0));
     for(int i=0;i<hang;i++)
@@ -13,21 +13,21 @@ void randomchess(int hang,int lie,bool chess[26][100])
             chess[i][j]=rand()%2;
 }
 
-void reverse_hang(int hang,int lie,bool chess[26][100],char tgt_hang)
+void reverse_hang(int hang,int lie,bool chess[26][100],char tgt_hang)//翻一行
 {
     for(int i=0;i<lie;i++)
         if(chess[tgt_hang-'a'][i]==1)  chess[tgt_hang-'a'][i]=0;
         else chess[tgt_hang-'a'][i]=1;
 }
 
-void reverse_lie(int hang,int lie,bool chess[26][100],int tgt_lie)
+void reverse_lie(int hang,int lie,bool chess[26][100],int tgt_lie)//翻一列
 {
     for(int i=0;i<hang;i++)
         if(chess[i][tgt_lie-1]==1)  chess[i][tgt_lie-1]=0;
         else chess[i][tgt_lie-1]=1;
 }
 
-void showchess(int hang,int lie,bool chess[26][100])
+void showchess(int hang,int lie,bool chess[26][100])//显示当前棋盘
 {
     system("cls");
     cout<<"当前棋盘状态为"<<endl;
@@ -52,6 +52,7 @@ void showchess(int hang,int lie,bool chess[26][100])
 }
 int main()
 {
+    SetConsoleOutputCP(936);
     cout<<endl<<endl<<endl;
     cout<<"            Chessgame Simulation"<<endl;
     cout<<"--an auxiliary tool for <Linear Algebra (Honor)>"<<endl;
